@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>sit pics</title>
+    <style>
+        .title {
+            text-align:center;
+        }
+        .wrapper {
+            text-align: center;
+            position: relative;
+        }
+        .button {
+            display: block;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 50%;
+            margin-top: -25px;
+        }
+        .button-left {
+            left: 25%;
+        }
+        .button-right {
+            right: 25%;
+        }
+        .button img {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+    <script type="text/javascript" src="/pics.js">
+
+    </script>
+    <script th:inline="javascript">
+        var size = [[${size}]];
+    </script>
+</head>
+<body >
+    <div>
+        <h4 class="title">图片展示</h4>
+        <div class="wrapper">
+            <a href="#" class="button button-left" onclick="onPic()"><img src="/left.jpg"></a>
+            <img src="/showpic?currentIndex=0" style="text-align: center" id="img_pic">
+            <a href="#" class="button button-right" onclick="nextPic()"><img src="/right.jpg"></a>
+        </div>
+    </div>
+</body>
+</html>
